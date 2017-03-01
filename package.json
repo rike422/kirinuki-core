@@ -1,7 +1,7 @@
 {
   "name": "kirinuki-core",
   "description": "Parse html by CSS query selectors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Akira Takahash",
   "ava": {
     "files": [
@@ -52,7 +52,7 @@
   },
   "scripts": {
     "build": "npm run build:node && npm run build:standalone",
-    "build:node": "babel src/*.js -d lib/ --ignore *_test.js",
+    "build:node": "babel src -d lib --ignore *_test.js",
     "build:standalone": "browserify src/kirinuki.js -s kirinuki -o lib/kirinuki.standalone.js -t babelify",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
