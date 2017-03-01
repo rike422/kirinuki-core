@@ -44,7 +44,7 @@
   "keywords": [
     "js"
   ],
-  "license": "MIT",
+  "license": "GPL",
   "main": "lib/kirinuki.js",
   "repository": {
     "type": "git",
