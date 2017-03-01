@@ -11,8 +11,7 @@
       "babel-register"
     ],
     "verbose": true,
-    "noCache": true,
-    "babel": "inherit"
+    "noCache": true
   },
   "bugs": {
     "url": "https://github.com/rike422/kirinuki-core/issues"
@@ -53,7 +52,7 @@
   },
   "scripts": {
     "build": "npm run build:node && npm run build:standalone",
-    "build:node": "babel src/kirinuki.js -o lib/kirinuki.js",
+    "build:node": "babel src/*.js -d lib/ --ignore *_test.js",
     "build:standalone": "browserify src/kirinuki.js -s kirinuki -o lib/kirinuki.standalone.js -t babelify",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
