@@ -37,10 +37,17 @@ const html = `
 `;
 const schema = {
   topic: {
-    content: ".content"
+    content: ".content",
+    contents: ".content"
   }
 }
 
 kirinuki(schema, html)
-// > { topic: { content: 'Batman come back in Gossam City!' } }
+// > { topic: { 
+// content: 'Batman come back in Gossam City!' 
+// contents: [
+//  'Batman come back in Gossam City!',
+//  'Dr. Strange got into a traffic accident.',
+// ]
+// } }
 ```
