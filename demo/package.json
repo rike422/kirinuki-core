@@ -1,0 +1,21 @@
+{
+  "name": "kirinuki-core-demo",
+  "description": "Parse html by CSS query selectors",
+  "version": "0.0.1",
+  "author": "Akira Takahash",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "pluralize": "^3.1.0",
+    "react-codemirror": "timsuchanek/react-codemirror#master",
+    "react-json-viewer": "^1.6.0",
+    "react-micro-container": "^1.1.0",
+    "gh-pages": "^0.12.0",
+    "semantic-ui-react": "^0.66.0",
+    "katatema": "^0.1.7"
+  },
+  "scripts": {
+    "deploy": "npm run demo:build && gh-pages --dist docs",
+    "build": "katatema build",
+    "serve": "katatema serve"
+  }
+}

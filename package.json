@@ -1,0 +1,66 @@
+{
+  "name": "kirinuki-core",
+  "description": "Parse html by CSS query selectors",
+  "version": "0.0.1",
+  "author": "Akira Takahash",
+  "ava": {
+    "files": [
+      "src/**/*_test.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "verbose": true,
+    "noCache": true,
+    "babel": "inherit"
+  },
+  "bugs": {
+    "url": "https://github.com/rike422/kirinuki-core/issues"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "pluralize": "^3.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.22.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "eslint": "^3.14.1",
+    "eslint-config-xo": "^0.17.0",
+    "eslint-config-xo-space": "^0.15.0",
+    "nyc": "^10.1.2",
+    "power-assert": "^1.4.2",
+    "release-it": "^2.5.4",
+    "sinon": "^1.17.7",
+    "snazzy": "^6.0.0"
+  },
+  "files": [
+    "lib/**/*.js"
+  ],
+  "homepage": "https://github.com/rike422/kirinuki-core#readme",
+  "keywords": [
+    "js"
+  ],
+  "license": "MIT",
+  "main": "lib/kirinuki.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rike422/kirinuki-core.git"
+  },
+  "scripts": {
+    "build": "npm run build:node && npm run build:standalone",
+    "build:node": "babel src/kirinuki.js -o lib/kirinuki.js",
+    "build:standalone": "browserify src/kirinuki.js -s kirinuki -o lib/kirinuki.standalone.js -t babelify",
+    "clean": "rm -rf lib/*",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "prerelease": "npm run build",
+    "test": "NODE_ENV=AVA ava",
+    "test:ci": "NODE_ENV=AVA BABEL_DISABLE_CACHE=1 nyc ava",
+    "test:watch": "NODE_ENV=AVA ava --watch"
+  }
+}
