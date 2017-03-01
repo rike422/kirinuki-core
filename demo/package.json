@@ -14,7 +14,7 @@
     "katatema": "^0.1.7"
   },
   "scripts": {
-    "deploy": "npm run demo:build && gh-pages --dist docs",
+    "deploy": "npm run build && gh-pages --dist docs",
     "build": "katatema build",
     "serve": "katatema serve"
   }

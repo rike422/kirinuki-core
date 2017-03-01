@@ -13,5 +13,5 @@ build:
 	cd demo; npm run build
 
 doc-deploy:
-	make build
+	make build-and-copy
 	cd demo; npm run deploy
