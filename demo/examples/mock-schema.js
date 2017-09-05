@@ -1,3 +1,8 @@
+const attributeRuleSchema = {
+  hero: [".content[data-hero]", "data-hero"],
+  heroes: [".content[data-hero]", "data-hero"]
+}
+
 const defaultSchema = {
   topic: {
     content: ".content"
@@ -40,6 +45,7 @@ const rootRuleSchema = {
   }
 }
 export {
+  attributeRuleSchema,
   defaultSchema,
   nameRuleSchema,
   unfoldRuleSchema,

@@ -7,6 +7,7 @@ import JsonEditor from "../components/json-editor";
 import HtmlEditor from "../components/html-editor";
 import { heroNews } from "../examples/mock-html";
 import {
+  attributeRuleSchema,
   defaultSchema,
   nameRuleSchema,
   unfoldRuleSchema,
@@ -51,6 +52,10 @@ export default class Index extends MicroContainer {
     }
   }
 
+  updateAttributeRuleSchema () {
+    this.updateSchema(attributeRuleSchema)
+  }
+
   updateNameRuleSchema () {
     this.updateSchema(nameRuleSchema)
   }
@@ -89,12 +94,15 @@ export default class Index extends MicroContainer {
           <p>
             Kirinuki is a library that convert any html to JSON using CSS selectors.
           </p>
-          <Header as='h2'>features</Header>
-
           <p>
             * Kirinuki is automatically convert data type by query key naming rules.(singular form or a plural form)
             <br />
             <a onClick={this.updateNameRuleSchema.bind(this)}>try it!</a>
+          </p>
+          <p>
+            * To get the html attributes, specify with Array. ex: `["css selector", "attribute name"]`
+            <br />
+            <a onClick={this.updateAttributeRuleSchema.bind(this)}>try it!</a>
           </p>
           <p>
             * Support nesting schema. if schema has '_unfold' property unfold a plain object with array of value into a array with plain object
@@ -102,7 +110,7 @@ export default class Index extends MicroContainer {
             <a onClick={this.updateUnfoldRuleSchema.bind(this)}>try it!</a>
           </p>
           <p>
-            * root path
+            * Root path
             <br />
             <a onClick={this.updateRootRuleSchema.bind(this)}>try it!</a>
           </p>

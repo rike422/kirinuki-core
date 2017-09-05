@@ -2,7 +2,7 @@ MAKEFLAGS = -j1
 
 build-and-copy:
 	npm run build
-	cp -r lib demo/lib
+	cp -r lib demo/
 
 serve:
 	make build-and-copy
