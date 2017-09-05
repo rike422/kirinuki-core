@@ -17,25 +17,26 @@
     "url": "https://github.com/rike422/kirinuki-core/issues"
   },
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "pluralize": "^3.1.0"
+    "cheerio": "^1.0.0-rc.2",
+    "pluralize": "^7.0.0"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
+    "ava": "^0.22.0",
     "babel-cli": "^6.22.2",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-power-assert": "^1.0.0",
     "babelify": "^7.3.0",
     "browserify": "^14.1.0",
-    "eslint": "^3.14.1",
-    "eslint-config-xo": "^0.17.0",
-    "eslint-config-xo-space": "^0.15.0",
-    "nyc": "^10.1.2",
+    "eslint": "^4.6.1",
+    "eslint-config-xo": "^0.18.2",
+    "eslint-config-xo-space": "^0.16.0",
+    "nyc": "^11.1.0",
     "power-assert": "^1.4.2",
     "release-it": "^2.5.4",
-    "sinon": "^1.17.7",
-    "snazzy": "^6.0.0"
+    "sinon": "^3.2.1",
+    "snazzy": "^7.0.0"
   },
   "files": [
     "lib/**/*.js"
