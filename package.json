@@ -1,7 +1,7 @@
 {
   "name": "kirinuki-core",
   "description": "Parse html by CSS query selectors",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "author": "Akira Takahash",
   "ava": {
     "files": [
