@@ -20,18 +20,28 @@ function convertObject(object, _$) {
 
   const rootElement = root != null ? $.load(_$(root).html()) : _$;
 
-  const scrap = function (selector) {
+  const scrap = function (selector, attr) {
     const node = rootElement(selector).get(0)
-    if(node === undefined || node === null) {
+    if (node === undefined || node === null) {
       return void 0;
     }
-    return getNodeValue(node);
+    if (attr === undefined) {
+      return getNodeValue(node);
+    } else {
+      return node.attribs[attr]
+    }
   };
 
-  const scrapElements = function (selector) {
-    return rootElement(selector).toArray().map((tag, i) => {
-      return getNodeValue(tag);
-    });
+  const scrapElements = function (selector, attr) {
+    if (attr === undefined) {
+      return rootElement(selector).toArray().map((tag, i) => {
+        return getNodeValue(tag);
+      });
+    } else {
+      return rootElement(selector).toArray().map((tag, i) => {
+        return tag.attribs[attr]
+      });
+    }
   };
 
   const convertedObject = Object.keys(schema).reduce((converted, key) => {
@@ -40,6 +50,8 @@ function convertObject(object, _$) {
 
     if (isString(selector)) {
       converted[key] = scrapper(selector);
+    } else if (Array.isArray(selector)) {
+      converted[key] = scrapper.apply(null, selector);
     } else if (selector != null && typeof selector === 'object') {
       const data = convertObject(selector, rootElement);
       converted[key] = (Array.isArray(data) && !isPlural(key)) ? data[0] : data;
@@ -52,6 +64,5 @@ function convertObject(object, _$) {
 function convert(schema, html) {
   return convertObject(schema, $.load(html));
 }
-
 
 module.exports = convert;
