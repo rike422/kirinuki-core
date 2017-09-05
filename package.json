@@ -57,8 +57,7 @@
     "build:standalone": "browserify src/kirinuki.js -s kirinuki -o lib/kirinuki.standalone.js -t babelify",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
-    "prepublish": "npm run build",
-    "prerelease": "npm run build",
+    "prepare": "npm run build",
     "test": "NODE_ENV=AVA ava",
     "test:ci": "NODE_ENV=AVA BABEL_DISABLE_CACHE=1 nyc ava",
     "test:watch": "NODE_ENV=AVA ava --watch"
