@@ -3111,9 +3111,9 @@ react-json-viewer@1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/react-json-viewer/-/react-json-viewer-1.6.1.tgz#99f0fb0d8982980adc247524f7d907c3ab26905b"
 
-react-micro-container@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-micro-container/-/react-micro-container-1.1.0.tgz#a950fb3b21a46a1e3daf2bc673edaa6aae782a50"
+react-micro-container@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-micro-container/-/react-micro-container-1.2.0.tgz#3853265d722a3b0add1c9794056f101f656878d6"
   dependencies:
     events "^1.1.0"
 
