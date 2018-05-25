@@ -9,8 +9,8 @@
     "katatema": "0.1.8",
     "pluralize": "7.0.0",
     "react-codemirror": "timsuchanek/react-codemirror#master",
-    "react-json-viewer": "1.6.1",
-    "react-micro-container": "1.1.0",
+    "react-json-viewer": "1.7.1",
+    "react-micro-container": "1.2.0",
     "semantic-ui-react": "0.80.0"
   },
   "scripts": {
