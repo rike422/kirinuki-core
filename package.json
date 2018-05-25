@@ -34,7 +34,7 @@
     "eslint-config-xo-space": "0.16.0",
     "nyc": "11.2.0",
     "power-assert": "1.4.4",
-    "release-it": "2.8.5",
+    "release-it": "2.9.0",
     "sinon": "5.0.10",
     "snazzy": "7.0.0"
   },
