@@ -11,7 +11,7 @@
     "react-codemirror": "timsuchanek/react-codemirror#master",
     "react-json-viewer": "1.6.1",
     "react-micro-container": "1.1.0",
-    "semantic-ui-react": "0.72.0"
+    "semantic-ui-react": "0.80.0"
   },
   "scripts": {
     "deploy": "npm run build && gh-pages --dist docs",
