@@ -5,7 +5,7 @@
   "author": "Akira Takahash",
   "dependencies": {
     "cheerio": "1.0.0-rc.2",
-    "gh-pages": "1.1.0",
+    "gh-pages": "1.2.0",
     "katatema": "0.1.8",
     "pluralize": "7.0.0",
     "react-codemirror": "timsuchanek/react-codemirror#master",
