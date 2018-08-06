@@ -1,9 +1,10 @@
-@import "../node_modules/codemirror/lib/codemirror.css";
+@import "../../node_modules/codemirror/lib/codemirror.css";
 
 html {
   padding-top: 30px;
 }
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -15,7 +16,6 @@ html, body {
 .CodeMirror {
   width: 100%;
   height: 100%;
-  
 }
 
 .JsonEditorContainer {

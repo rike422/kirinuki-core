@@ -1,6 +1,7 @@
 {
   "presets": [
     "latest",
+    "babel-preset-stage-0",
     "babel-preset-power-assert"
   ],
   "sourceMaps": "inline"
