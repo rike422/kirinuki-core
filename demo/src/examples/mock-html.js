@@ -44,7 +44,4 @@ const table = `
 </table>
 `;
 
-export {
-  heroNews,
-  table
-};
+export { heroNews, table };
