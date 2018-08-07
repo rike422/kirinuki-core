@@ -1251,11 +1251,7 @@
       var t = typeof e;
       return Array.isArray(e)
         ? "array"
-        : e instanceof RegExp
-          ? "object"
-          : g(t, e)
-            ? "symbol"
-            : t;
+        : e instanceof RegExp ? "object" : g(t, e) ? "symbol" : t;
     }
     function b(e) {
       var t = y(e);
@@ -2201,12 +2197,8 @@
         null == e
           ? t
           : Array.isArray(e)
-            ? Array.isArray(t)
-              ? (e.push.apply(e, t), e)
-              : (e.push(t), e)
-            : Array.isArray(t)
-              ? [e].concat(t)
-              : [e, t]
+            ? Array.isArray(t) ? (e.push.apply(e, t), e) : (e.push(t), e)
+            : Array.isArray(t) ? [e].concat(t) : [e, t]
       );
     }
     var o = n(6);
@@ -2310,9 +2302,7 @@
           var u = o[a];
           u
             ? (this[a] = u(n))
-            : "target" === a
-              ? (this.target = r)
-              : (this[a] = n[a]);
+            : "target" === a ? (this.target = r) : (this[a] = n[a]);
         }
       var s =
         null != n.defaultPrevented ? n.defaultPrevented : n.returnValue === !1;
@@ -2540,14 +2530,8 @@
             u = t ? E.getNodeFromInstance(t) : window;
           if (
             (r(u)
-              ? A
-                ? (a = s)
-                : (i = l)
-              : P(u)
-                ? L
-                  ? (a = f)
-                  : ((a = m), (i = h))
-                : v(u) && (a = g),
+              ? A ? (a = s) : (i = l)
+              : P(u) ? (L ? (a = f) : ((a = m), (i = h))) : v(u) && (a = g),
             a)
           ) {
             var c = a(e, t);
@@ -3387,9 +3371,7 @@
         o = e.nextSibling;
       o === t
         ? n && v(r, document.createTextNode(n), o)
-        : n
-          ? (m(o, n), s(r, o, t))
-          : s(r, e, t);
+        : n ? (m(o, n), s(r, o, t)) : s(r, e, t);
     }
     var c = n(72),
       p = n(78),
@@ -4177,12 +4159,10 @@
             case "textarea":
               (a = D.getHostProps(this, a)), (i = D.getHostProps(this, i));
           }
-          switch (
-            (o(this, i),
-            this._updateDOMProperties(a, i, e),
-            this._updateDOMChildren(a, i, e, r),
-            this._tag)
-          ) {
+          switch ((o(this, i),
+          this._updateDOMProperties(a, i, e),
+          this._updateDOMChildren(a, i, e, r),
+          this._tag)) {
             case "input":
               S.updateWrapper(this);
               break;
@@ -4574,9 +4554,7 @@
               : r + "=" + i(t);
           }
           return a.isCustomAttribute(e)
-            ? null == t
-              ? ""
-              : e + "=" + i(t)
+            ? null == t ? "" : e + "=" + i(t)
             : null;
         },
         createMarkupForCustomAttribute: function(e, t) {
@@ -5091,9 +5069,7 @@
             ? (o(e), e.valueLink.requestChange(t.target.value))
             : e.checkedLink
               ? (a(e), e.checkedLink.requestChange(t.target.checked))
-              : e.onChange
-                ? e.onChange.call(void 0, t)
-                : void 0;
+              : e.onChange ? e.onChange.call(void 0, t) : void 0;
         }
       };
     e.exports = h;
@@ -6123,9 +6099,7 @@
           return null === e || e === !1
             ? a.EMPTY
             : o.isValidElement(e)
-              ? "function" == typeof e.type
-                ? a.COMPOSITE
-                : a.HOST
+              ? "function" == typeof e.type ? a.COMPOSITE : a.HOST
               : void r("26", e);
         }
       });
@@ -6251,9 +6225,7 @@
             ":" +
             t.lineNumber +
             ")"
-          : n
-            ? " (created by " + n + ")"
-            : "")
+          : n ? " (created by " + n + ")" : "")
       );
     }
     function m(e) {
@@ -6396,9 +6368,7 @@
           var t = w.getElement(e);
           return "string" == typeof t
             ? t
-            : "number" == typeof t
-              ? "" + t
-              : null;
+            : "number" == typeof t ? "" + t : null;
         },
         getUpdateCount: function(e) {
           var t = i(e);
@@ -8328,9 +8298,7 @@
         which: function(e) {
           return "keypress" === e.type
             ? a(e)
-            : "keydown" === e.type || "keyup" === e.type
-              ? e.keyCode
-              : 0;
+            : "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0;
         }
       };
     o.augmentClass(r, s), (e.exports = r);
@@ -8466,18 +8434,14 @@
         deltaX: function(e) {
           return "deltaX" in e
             ? e.deltaX
-            : "wheelDeltaX" in e
-              ? -e.wheelDeltaX
-              : 0;
+            : "wheelDeltaX" in e ? -e.wheelDeltaX : 0;
         },
         deltaY: function(e) {
           return "deltaY" in e
             ? e.deltaY
             : "wheelDeltaY" in e
               ? -e.wheelDeltaY
-              : "wheelDelta" in e
-                ? -e.wheelDelta
-                : 0;
+              : "wheelDelta" in e ? -e.wheelDelta : 0;
         },
         deltaZ: null,
         deltaMode: null
@@ -8777,9 +8741,7 @@
         e = e._renderedComponent;
       return t === o.HOST
         ? e._renderedComponent
-        : t === o.EMPTY
-          ? null
-          : void 0;
+        : t === o.EMPTY ? null : void 0;
     }
     var o = n(114);
     e.exports = r;

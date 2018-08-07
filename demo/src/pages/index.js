@@ -2,24 +2,26 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import MicroContainer from "react-micro-container";
-const kirinuki = require("../../lib/kirinuki.standalone");
-import { Previewer } from "../components/previewer";
-import { JSONEditor } from "../components/json-editor";
+import { Button, Container, Grid, Header } from "semantic-ui-react";
 import { HtmlEditor } from "../components/html-editor";
+import { JSONEditor } from "../components/json-editor";
+import { Previewer } from "../components/previewer";
 import { heroNews } from "../examples/mock-html";
 import {
   attributeRuleSchema,
   defaultSchema,
   nameRuleSchema,
-  unfoldRuleSchema,
-  rootRuleSchema
+  rootRuleSchema,
+  unfoldRuleSchema
 } from "../examples/mock-schema";
-
-require("codemirror/mode/htmlmixed/htmlmixed");
-require("codemirror/mode/javascript/javascript");
-
-import { Header, Container, Button, Grid } from "semantic-ui-react";
 import "./main.scss";
+
+const kirinuki = require("../../lib/kirinuki.standalone");
+
+if (typeof navigator !== "undefined") {
+  require("codemirror/mode/htmlmixed/htmlmixed");
+  require("codemirror/mode/javascript/javascript");
+}
 
 export default class Index extends MicroContainer {
   constructor(props, context) {
