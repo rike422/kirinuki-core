@@ -33,7 +33,7 @@
     "power-assert": "1.6.0",
     "prettier": "1.14.0",
     "release-it": "7.5.0",
-    "sinon": "6.1.4",
+    "sinon": "6.1.5",
     "snazzy": "7.1.1"
   },
   "files": [
