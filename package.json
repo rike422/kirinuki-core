@@ -23,17 +23,17 @@
   "devDependencies": {
     "ava": "0.25.0",
     "babel-cli": "6.26.0",
-    "babel-plugin-external-helpers": "6.22.0",
-    "babel-preset-env": "1.7.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "6.24.1",
     "babel-preset-power-assert": "2.0.0",
     "babelify": "8.0.0",
     "browserify": "16.2.2",
     "nyc": "12.0.2",
     "power-assert": "1.6.0",
-    "prettier": "1.14.0",
+    "prettier": "1.14.2",
     "release-it": "7.5.0",
-    "sinon": "6.1.4",
+    "sinon": "6.1.5",
     "snazzy": "7.1.1"
   },
   "files": [
@@ -50,9 +50,8 @@
     "url": "git+https://github.com/rike422/kirinuki-core.git"
   },
   "scripts": {
-    "build": "npm run build:node && npm run build:standalone",
+    "build": "npm run build:node",
     "build:node": "babel src -d lib --ignore *_test.js",
-    "build:standalone": "browserify src/kirinuki.js -s kirinuki -o lib/kirinuki.standalone.js -t babelify",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
     "prepare": "npm run build",
