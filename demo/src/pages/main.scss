@@ -21,8 +21,14 @@ body {
 .JsonEditorContainer {
   height: 200px;
   width: 500px;
+  overflow: scroll;
 }
 .HtmlEditorContainer {
   height: 300px;
   width: 500px;
+  overflow: scroll;
+}
+.PreviewerContainer {
+  height: 550px;
+  overflow: scroll;
 }

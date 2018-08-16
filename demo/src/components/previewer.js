@@ -4,7 +4,7 @@ import JSONViewer from "react-json-viewer";
 export const Previewer = function(props) {
   const { json } = props;
   return (
-    <div>
+    <div className="PreviewerContainer">
       <JSONViewer json={json} />
     </div>
   );
