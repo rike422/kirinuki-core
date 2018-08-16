@@ -1,9 +1,9 @@
 import test from "ava";
-import { heroNews } from "./fixtures/fixture_test";
-import kirinuki from "./kirinuki";
+import { heroNews } from "../fixtures/fixture_test";
+import { node } from "../kirinuki";
 
 test("should unfold query object attributes when which has the _unfold property", t => {
-  const value = kirinuki(
+  const value = node(
     {
       title: "title",
       topics: {
@@ -31,7 +31,7 @@ test("should unfold query object attributes when which has the _unfold property"
 });
 
 test("should pick first object when property key is single", t => {
-  const value = kirinuki(
+  const value = node(
     {
       title: "title",
       topic: {
@@ -53,7 +53,7 @@ test("should pick first object when property key is single", t => {
 });
 
 test("should unfold query object attributes when which has the _unfold property", t => {
-  const value = kirinuki(
+  const value = node(
     {
       title: "title",
       topic: {

@@ -1,9 +1,8 @@
 import sinon from "sinon";
 import test from "ava";
-import { heroNews, table } from "./fixtures/fixture_test";
-
+import { heroNews, table } from "../fixtures/fixture_test";
 import cheerio from "cheerio";
-import getNodeValue from "./get-node-value";
+import { getNodeValue } from "./node";
 
 test("should return href attribute when <a>", t => {
   const url = "https://google.com";
