@@ -2,6 +2,5 @@
   "presets": [
     "latest",
     "babel-preset-power-assert"
-  ],
-  "sourceMaps": "inline"
+  ]
 }
