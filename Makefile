@@ -2,11 +2,11 @@ MAKEFLAGS = -j1
 
 build-and-copy:
 	npm run build
-	cp -r lib demo/
+	cp -r lib demo/src/
 
-serve:
+develop:
 	make build-and-copy
-	cd demo; npm run serve
+	cd demo; npm run develop
 
 build:
 	make build-and-copy
