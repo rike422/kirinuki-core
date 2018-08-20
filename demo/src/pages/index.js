@@ -16,7 +16,7 @@ import {
 } from "../examples/mock-schema";
 import "./main.scss";
 
-const kirinuki = require("../lib/kirinuki");
+import { browser as kirinuki } from "../lib/kirinuki";
 
 if (typeof navigator !== "undefined") {
   require("codemirror/mode/htmlmixed/htmlmixed");
