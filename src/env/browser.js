@@ -1,65 +1,73 @@
 // @flow
 
-import type { CheerioAPI, CheerioElement, CheerioStatic } from "cheerio";
-import $ from "cheerio";
+import { isString } from "../util";
 
-function createDom(node, root: ?string): CheerioStatic {
-  const cheerioNode = $.load(node)
-  if(root) {
-    return $.load(cheerioNode(root).html());
+type Scrapper = {
+  scrap: (selector: string, attr: ?string) => string | void,
+  scrapElements: (selector: string, attr: ?string) => string | Array<string>
+};
+
+function createDom(
+  node: string | HTMLElement = document,
+  root: ?string
+): HTMLElement {
+  const target = isString(node) ? parseDom(node) : node;
+
+  if (root != null) {
+    return target.querySelector(root);
   }
-  return cheerioNode;
+  return target;
 }
 
-function getScrapper(rootElement: CheerioStatic) {
-
+function getScrapper(rootNode: HTMLElement): Scrapper {
   const scrap = function(selector: string, attr: ?string) {
-    const node: CheerioElement = rootElement(selector).get(0);
+    const node: ?HTMLElement = rootNode.querySelectorAll(selector)[0];
     if (node == null) {
       return void 0;
     }
     if (attr == undefined) {
       return getNodeValue(node);
     } else {
-      return node.attribs[attr];
+      return node.getAttribute(attr);
     }
   };
 
-  const scrapElements = function(selector: string, attr: ?string): string | string[] {
+  const scrapElements = function(
+    selector: string,
+    attr: ?string
+  ): string | Array<string> {
+    const list = Array.from(rootNode.querySelectorAll(selector));
     if (attr == undefined) {
-      return rootElement(selector)
-        .toArray()
-        .map((tag, i) => {
-          return getNodeValue(tag);
-        });
-    } else {
-      return rootElement(selector)
-        .toArray()
-        .map((tag, i) => {
-          return tag.attribs[attr];
-        });
+      return list.map((tag, i) => {
+        return getNodeValue(tag);
+      });
     }
+    return list.map((tag: HTMLElement, i) => {
+      return tag.getAttribute(attr);
+    });
   };
 
-  return {
-    scrap: scrap,
-    scrapElements: scrapElements
-  };
+  return { scrap: scrap, scrapElements: scrapElements };
 }
 
-export const scrapper = {
+export const context = {
   createDom,
   getScrapper
+};
+
+export function getNodeValue(node: HTMLElement): string {
+  if (node instanceof HTMLImageElement) {
+    return node.src;
+  } else if (
+    node instanceof HTMLAnchorElement ||
+    node instanceof HTMLLinkElement
+  ) {
+    return node.href;
+  }
+  return node.textContent;
 }
 
-export function getNodeValue(node: CheerioElement): string {
-  const type = node.name;
-  if (type === "img") {
-    return node.attribs.src;
-  } else if (type === "a" || type === "link") {
-    return node.attribs.href;
-  }
-  return $(node)
-    .text()
-    .trim();
+function parseDom(html) {
+  const parser = new DOMParser();
+  return parser.parseFromString(html, "text/html");
 }

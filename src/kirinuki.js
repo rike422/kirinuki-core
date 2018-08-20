@@ -1,20 +1,23 @@
 // @flow
 
-import { scrapper as nodeScrapper } from './env/node';
-import { unfold } from './unfold';
-import { isPlural, isString } from './util';
+import { context as nodeContext } from "./env/node";
+import { context as browserContext } from "./env/browser";
+import { unfold } from "./unfold";
+import { isPlural, isString } from "./util";
 
-function kirinuki(scrapContext) {
+function kirinuki(context) {
+  const bindConvert = convert.bind(context);
 
-  function convertObject(baseSchema, node: string) {
+  function convert(baseSchema, node: any) {
     const schema = Object.assign({}, baseSchema);
     const root = schema._root;
     const isUnfoldMode = schema._unfold;
     delete schema._root;
     delete schema._unfold;
-    const rootElement = root == null ? scrapContext.createDom(node) : scrapContext.createDom(node, root);
+    const rootElement =
+      root == null ? this.createDom(node) : this.createDom(node, root);
 
-    const scrapper = scrapContext.getScrapper(rootElement);
+    const scrapper = this.getScrapper(rootElement);
 
     const convertedObject = Object.keys(schema).reduce((converted, key) => {
       const selector = schema[key];
@@ -25,8 +28,8 @@ function kirinuki(scrapContext) {
         converted[key] = scrap(selector);
       } else if (Array.isArray(selector)) {
         converted[key] = scrap.apply(null, selector);
-      } else if (selector != null && typeof selector === 'object') {
-        const data = convertObject(selector, rootElement.html());
+      } else if (selector != null && typeof selector === "object") {
+        const data = bindConvert(selector, rootElement);
         converted[key] = Array.isArray(data) && !isPlural(key) ? data[0] : data;
       }
       return converted;
@@ -34,9 +37,10 @@ function kirinuki(scrapContext) {
     return isUnfoldMode ? unfold(convertedObject) : convertedObject;
   }
 
-  return (schema: Object, html: string) => {
-    return convertObject(schema, html);
+  return (schema: Object, html: any) => {
+    return bindConvert(schema, html);
   };
 }
 
-export const node = kirinuki(nodeScrapper);
+export const node = kirinuki(nodeContext);
+export const browser = kirinuki(browserContext);

@@ -1,18 +1,22 @@
 // @flow
-
-import type { CheerioAPI, CheerioElement, CheerioStatic } from "cheerio";
+import type { Cheerio, CheerioElement, CheerioStatic } from "cheerio";
 import $ from "cheerio";
+import { isString } from "../util";
 
-function createDom(node, root: ?string): CheerioStatic {
-  const cheerioNode = $.load(node)
-  if(root) {
+type Scrapper = {
+  scrap: (selector: string, attr: ?string) => string | void,
+  scrapElements: (selector: string, attr: ?string) => string | Array<string>
+};
+
+function createDom(node: string | CheerioElement, root: ?string): Cheerio {
+  const cheerioNode = isString(node) ? $.load(node) : node;
+  if (root) {
     return $.load(cheerioNode(root).html());
   }
   return cheerioNode;
 }
 
-function getScrapper(rootElement: CheerioStatic) {
-
+function getScrapper(rootElement: CheerioStatic): Scrapper {
   const scrap = function(selector: string, attr: ?string) {
     const node: CheerioElement = rootElement(selector).get(0);
     if (node == null) {
@@ -25,7 +29,10 @@ function getScrapper(rootElement: CheerioStatic) {
     }
   };
 
-  const scrapElements = function(selector: string, attr: ?string): string | string[] {
+  const scrapElements = function(
+    selector: string,
+    attr: ?string
+  ): string | Array<string> {
     if (attr == undefined) {
       return rootElement(selector)
         .toArray()
@@ -41,16 +48,10 @@ function getScrapper(rootElement: CheerioStatic) {
     }
   };
 
-  return {
-    scrap: scrap,
-    scrapElements: scrapElements
-  };
+  return { scrap: scrap, scrapElements: scrapElements };
 }
 
-export const scrapper = {
-  createDom,
-  getScrapper
-}
+export const context = { createDom, getScrapper };
 
 export function getNodeValue(node: CheerioElement): string {
   const type = node.name;
