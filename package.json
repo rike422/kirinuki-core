@@ -31,6 +31,7 @@
     "babel-preset-power-assert": "2.0.0",
     "babelify": "8.0.0",
     "browserify": "16.2.2",
+    "codecov": "^3.0.4",
     "flow": "^0.2.3",
     "flow-bin": "^0.79.0",
     "jsdom": "^12.0.0",
