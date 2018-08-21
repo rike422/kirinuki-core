@@ -1,5 +1,5 @@
 import test from "ava";
-import unfold from "./unfold";
+import { unfold } from "./unfold";
 
 test("should return ", t => {
   const value = unfold({

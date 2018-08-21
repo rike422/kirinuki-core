@@ -1,9 +1,11 @@
 import test from "ava";
-import { heroNews } from "./fixtures/fixture_test";
-import kirinuki from "./kirinuki";
+import { heroNews } from "../fixtures/fixture_test";
+import { browser } from "../kirinuki";
+
+setupWindow(heroNews);
 
 test("should return single value when attribute key is single", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: ".news-list .content"
@@ -18,7 +20,7 @@ test("should return single value when attribute key is single", t => {
 });
 
 test("should return Array when attribute key is plural", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: {
@@ -39,7 +41,7 @@ test("should return Array when attribute key is plural", t => {
 });
 
 test("should return Array when attribute key is plural", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: {
@@ -66,7 +68,7 @@ test("should return Array when attribute key is plural", t => {
 });
 
 test("should return value in appropriate type, dependent on attributes key form", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: {

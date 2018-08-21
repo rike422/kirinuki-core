@@ -9,10 +9,15 @@ https://rike422.github.io/kirinuki-core
 
 ## Usage
 
+### Node.js
+
+Parse string and build DOM by [cheerio](https://github.com/cheeriojs/cheerio) and extract JSON from that.
+
+- browser(schema: Object, node: string)
+
 ```javascript
 
-const kirinuki = require('kirinuki');
-const schema = {}
+import { node as kirinuki } from 'kirinuki';
 const html = `
 <html>
   <head>
@@ -51,3 +56,36 @@ kirinuki(schema, html)
 // ]
 // } }
 ```
+
+### browser
+
+scrape to Doucment or HTMLElement by [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+- browser(schema: Object, node: Document)
+- browser(schema: Object, node: HTMLElement)
+- browser(schema: Object, node: string)
+- browser(schema: Object) // auto assign to window.document to node variable
+
+```javascript
+import { browser as kirinuki } from 'kirinuki';
+
+
+const schema = {
+  topic: {
+    content: ".content",
+    contents: ".content"
+  }
+}
+
+kirinuki(schema)
+
+// > { topic: { 
+// content: 'Batman come back in Gossam City!' 
+// contents: [
+//  'Batman come back in Gossam City!',
+//  'Dr. Strange got into a traffic accident.',
+// ]
+// } }
+
+```
+

@@ -1,9 +1,11 @@
 import test from "ava";
-import { heroNews } from "./fixtures/fixture_test";
-import kirinuki from "./kirinuki";
+import { heroNews } from "../fixtures/fixture_test";
+import { browser } from "../kirinuki";
+
+setupWindow(heroNews);
 
 test("should unfold query object attributes when which has the _unfold property", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topics: {
@@ -12,7 +14,7 @@ test("should unfold query object attributes when which has the _unfold property"
         image: ".news-list img"
       }
     },
-    heroNews
+    document
   );
 
   t.deepEqual(value, {
@@ -31,7 +33,7 @@ test("should unfold query object attributes when which has the _unfold property"
 });
 
 test("should pick first object when property key is single", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: {
@@ -40,7 +42,7 @@ test("should pick first object when property key is single", t => {
         image: ".news-list img"
       }
     },
-    heroNews
+    document
   );
 
   t.deepEqual(value, {
@@ -53,7 +55,7 @@ test("should pick first object when property key is single", t => {
 });
 
 test("should unfold query object attributes when which has the _unfold property", t => {
-  const value = kirinuki(
+  const value = browser(
     {
       title: "title",
       topic: {
@@ -64,7 +66,7 @@ test("should unfold query object attributes when which has the _unfold property"
         }
       }
     },
-    heroNews
+    document
   );
 
   t.deepEqual(value, {

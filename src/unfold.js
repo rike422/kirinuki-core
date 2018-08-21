@@ -1,4 +1,4 @@
-export default function unfold(obj) {
+export function unfold(obj) {
   const keys = Object.keys(obj);
   const len = Math.max.apply(
     null,
