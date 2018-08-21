@@ -90,7 +90,7 @@ export default class Index extends MicroContainer {
         <Helmet>
           <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+            href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
           />
           <link
             rel="stylesheet"
@@ -98,11 +98,11 @@ export default class Index extends MicroContainer {
           />
           <link
             rel="stylesheet"
-            href="https://esironal.github.io/cmtouch/lib/codemirror.css"
+            href="//esironal.github.io/cmtouch/lib/codemirror.css"
           />
           <link
             rel="stylesheet"
-            href="https://esironal.github.io/cmtouch/addon/hint/show-hint.css"
+            href="//esironal.github.io/cmtouch/addon/hint/show-hint.css"
           />
         </Helmet>
 
