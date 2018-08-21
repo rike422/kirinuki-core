@@ -2,7 +2,7 @@
   "name": "kirinuki-core",
   "description": "Parse html by CSS query selectors",
   "version": "2.0.1",
-  "author": "Akira Takahash",
+  "author": "Akira Nitta",
   "ava": {
     "files": [
       "src/**/*_test.js"
@@ -49,7 +49,7 @@
   "keywords": [
     "js"
   ],
-  "license": "GPL",
+  "license": "MIT",
   "main": "lib/kirinuki.js",
   "repository": {
     "type": "git",
