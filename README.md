@@ -1,4 +1,4 @@
-# kirinuki-core [![npm version](https://badge.fury.io/js/kirinuki-core.svg)](https://badge.fury.io/js/kirinuki-core)
+# kirinuki-core [![npm version](https://badge.fury.io/js/kirinuki-core.svg)](https://badge.fury.io/js/kirinuki-core) [![Build Status](https://travis-ci.org/rike422/kirinuki-core.svg?branch=master)](https://travis-ci.org/rike422/kirinuki-core)  [![codecov](https://codecov.io/gh/rike422/kirinuki-core/branch/master/graph/badge.svg)](https://codecov.io/gh/rike422/kirinuki-core)
 
 Kirinuki is a library that convert any html to JSON using CSS selectors.
 
