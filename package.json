@@ -24,7 +24,6 @@
   "devDependencies": {
     "ava": "0.25.0",
     "babel-cli": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-latest": "6.24.1",
@@ -39,6 +38,12 @@
     "power-assert": "1.6.0",
     "prettier": "1.14.2",
     "release-it": "7.5.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^4.0.0",
     "sinon": "6.1.5",
     "snazzy": "7.1.1"
   },
@@ -56,8 +61,9 @@
     "url": "git+https://github.com/rike422/kirinuki-core.git"
   },
   "scripts": {
-    "build": "npm run build:node",
+    "build": "npm run build:node && npm run build:browser",
     "build:node": "babel src -d lib --ignore *_test.js",
+    "build:browser": "rollup -c",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
     "prepare": "npm run build",

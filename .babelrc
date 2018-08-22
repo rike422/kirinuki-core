@@ -1,7 +1,11 @@
 {
   "presets": [
-    "latest",
+    ["latest", {
+      "es2015": {
+        "modules": false
+      }
+    }],
     "flow",
     "babel-preset-power-assert"
-  ]
+  ],
 }
