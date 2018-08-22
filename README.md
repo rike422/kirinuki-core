@@ -89,3 +89,6 @@ kirinuki(schema)
 
 ```
 
+#### Standalone js file
+
+`kirinuki.standalone.js` is builded at umd style, that is Included only libraries for browser javascript engien
