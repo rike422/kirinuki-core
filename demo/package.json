@@ -7,7 +7,7 @@
     "babel-preset-react": "6.24.1",
     "babel-runtime": "6.26.0",
     "cheerio": "1.0.0-rc.2",
-    "codemirror": "5.39.2",
+    "codemirror": "5.40.0",
     "gatsby": "1.9.277",
     "gatsby-link": "1.6.46",
     "gatsby-plugin-react-helmet": "2.0.11",
