@@ -19,7 +19,7 @@
     "react-helmet": "5.2.0",
     "react-json-viewer": "1.7.1",
     "react-micro-container": "1.2.0",
-    "recompose": "0.29.0",
+    "recompose": "0.30.0",
     "semantic-ui-css": "2.3.3",
     "semantic-ui-react": "0.82.3"
   },
