@@ -42,7 +42,7 @@
     "rollup-plugin-commonjs": "9.1.6",
     "rollup-plugin-json": "3.0.0",
     "rollup-plugin-node-resolve": "3.3.0",
-    "rollup-plugin-uglify": "4.0.0",
+    "rollup-plugin-uglify": "5.0.2",
     "sinon": "6.1.5",
     "snazzy": "8.0.0"
   },
