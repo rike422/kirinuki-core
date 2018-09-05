@@ -37,7 +37,7 @@
     "power-assert": "1.6.0",
     "prettier": "1.14.2",
     "release-it": "7.6.0",
-    "rollup": "0.65.0",
+    "rollup": "0.65.1",
     "rollup-plugin-babel": "3.0.7",
     "rollup-plugin-commonjs": "9.1.6",
     "rollup-plugin-json": "3.0.0",
