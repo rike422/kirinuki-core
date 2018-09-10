@@ -21,7 +21,7 @@
     "react-micro-container": "1.2.0",
     "recompose": "0.30.0",
     "semantic-ui-css": "2.3.3",
-    "semantic-ui-react": "0.82.3"
+    "semantic-ui-react": "0.82.4"
   },
   "scripts": {
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
