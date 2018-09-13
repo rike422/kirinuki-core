@@ -14,7 +14,7 @@
     "gatsby-plugin-sass": "1.0.26",
     "gh-pages": "1.2.0",
     "pluralize": "7.0.0",
-    "react": "16.5.0",
+    "react": "16.5.1",
     "react-codemirror2": "5.1.0",
     "react-helmet": "5.2.0",
     "react-json-viewer": "1.7.1",
