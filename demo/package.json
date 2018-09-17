@@ -20,7 +20,7 @@
     "react-json-viewer": "1.7.1",
     "react-micro-container": "1.2.0",
     "recompose": "0.30.0",
-    "semantic-ui-css": "2.3.3",
+    "semantic-ui-css": "2.4.0",
     "semantic-ui-react": "0.82.5"
   },
   "scripts": {
