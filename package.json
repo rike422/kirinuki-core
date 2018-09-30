@@ -32,7 +32,7 @@
     "codecov": "3.1.0",
     "flow": "0.2.3",
     "flow-bin": "0.81.0",
-    "jsdom": "12.0.0",
+    "jsdom": "12.1.0",
     "nyc": "13.0.1",
     "power-assert": "1.6.1",
     "prettier": "1.14.3",
