@@ -8,7 +8,7 @@
     "babel-runtime": "6.26.0",
     "cheerio": "1.0.0-rc.2",
     "codemirror": "5.42.0",
-    "gatsby": "2.0.72",
+    "gatsby": "2.0.73",
     "gatsby-link": "2.0.7",
     "gatsby-plugin-react-helmet": "3.0.4",
     "gatsby-plugin-sass": "2.0.7",
