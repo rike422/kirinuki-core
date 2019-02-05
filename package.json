@@ -33,7 +33,7 @@
     "flow": "0.2.3",
     "flow-bin": "0.92.0",
     "jsdom": "13.2.0",
-    "nyc": "13.1.0",
+    "nyc": "13.2.0",
     "power-assert": "1.6.1",
     "prettier": "1.16.4",
     "release-it": "9.8.3",
