@@ -36,7 +36,7 @@
     "nyc": "13.2.0",
     "power-assert": "1.6.1",
     "prettier": "1.16.4",
-    "release-it": "9.8.3",
+    "release-it": "10.1.0",
     "rollup": "0.68.2",
     "rollup-plugin-babel": "3.0.7",
     "rollup-plugin-commonjs": "9.2.0",
