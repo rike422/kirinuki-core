@@ -1,8 +1,10 @@
 {
   "presets": [
-    "latest",
-    "babel-preset-stage-0",
-    "babel-preset-power-assert"
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
   ],
   "sourceMaps": "inline"
 }
