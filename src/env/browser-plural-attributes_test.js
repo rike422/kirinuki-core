@@ -4,7 +4,7 @@ import { browser } from "../kirinuki";
 
 setupWindow(heroNews);
 
-test("should unfold query object attributes when which has the _unfold property", t => {
+test("should unfold query object attributes when which has the _unfold property in browser", t => {
   const value = browser(
     {
       title: "title",
@@ -54,7 +54,7 @@ test("should pick first object when property key is single", t => {
   });
 });
 
-test("should unfold query object attributes when which has the _unfold property", t => {
+test("should unfold query object attributes when which has the _unfold property in browser(image)", t => {
   const value = browser(
     {
       title: "title",

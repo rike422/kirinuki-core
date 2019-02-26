@@ -2,7 +2,7 @@ import test from "ava";
 import { heroNews } from "../fixtures/fixture_test";
 import { node } from "../kirinuki";
 
-test("should unfold query object attributes when which has the _unfold property", t => {
+test("should unfold query object attributes when which has the _unfold property in node", t => {
   const value = node(
     {
       title: "title",
@@ -52,7 +52,7 @@ test("should pick first object when property key is single", t => {
   });
 });
 
-test("should unfold query object attributes when which has the _unfold property", t => {
+test("should unfold query object attributes when which has the _unfold property in node(image)", t => {
   const value = node(
     {
       title: "title",

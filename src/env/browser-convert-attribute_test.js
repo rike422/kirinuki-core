@@ -4,7 +4,7 @@ import { browser } from "../kirinuki";
 
 setupWindow(heroNews);
 
-test("should return single html attribute when selector is Array and selector key is single", t => {
+test("should return single html attribute when selector is Array and selector key is single on browser", t => {
   const value = browser(
     {
       hero: [".news-list .content", "data-hero"]
@@ -17,7 +17,7 @@ test("should return single html attribute when selector is Array and selector ke
   });
 });
 
-test("should return Array html attributes when selector is Array and selector key is plural", t => {
+test("should return Array html attributes when selector is Array and selector key is plural on browser", t => {
   const value = browser(
     {
       heroes: [".news-list .content", "data-hero"]

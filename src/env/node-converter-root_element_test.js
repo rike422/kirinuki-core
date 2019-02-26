@@ -17,7 +17,7 @@ test("should return single value when attribute key is single", t => {
   });
 });
 
-test("should return Array when attribute key is plural", t => {
+test("should return Array when attribute key is plural with root element", t => {
   const value = node(
     {
       title: "title",

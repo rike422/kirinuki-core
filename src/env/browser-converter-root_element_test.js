@@ -4,7 +4,7 @@ import { browser } from "../kirinuki";
 
 setupWindow(heroNews);
 
-test("should return single value when attribute key is single", t => {
+test("should return single value when attribute key is single on browser", t => {
   const value = browser(
     {
       title: "title",
@@ -19,7 +19,7 @@ test("should return single value when attribute key is single", t => {
   });
 });
 
-test("should return Array when attribute key is plural", t => {
+test("should return Array when attribute key is plural on browser(image)", t => {
   const value = browser(
     {
       title: "title",
