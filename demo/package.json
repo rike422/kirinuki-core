@@ -16,6 +16,7 @@
     "pluralize": "7.0.0",
     "react": "16.8.3",
     "react-codemirror2": "5.1.0",
+    "react-dom": "^16.8.3",
     "react-helmet": "5.2.0",
     "react-json-viewer": "1.7.1",
     "react-micro-container": "1.2.0",
@@ -30,6 +31,8 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.4",
     "babel-plugin-transform-runtime": "6.23.0"
   }
 }

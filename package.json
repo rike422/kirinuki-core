@@ -19,12 +19,13 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "node-sass": "^4.11.0",
     "pluralize": "^7.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/plugin-external-helpers": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-env": "^7.3.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/register": "^7.0.0",
     "ava": "1.2.1",
@@ -37,13 +38,13 @@
     "power-assert": "1.6.1",
     "prettier": "1.16.4",
     "release-it": "10.1.0",
-    "sinon": "7.2.4",
     "rollup": "1.1.2",
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-json": "3.1.0",
     "rollup-plugin-node-resolve": "4.0.0",
     "rollup-plugin-uglify": "6.0.2",
+    "sinon": "7.2.4",
     "snazzy": "8.0.0"
   },
   "files": [
