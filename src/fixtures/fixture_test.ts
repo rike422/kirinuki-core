@@ -32,7 +32,7 @@ const heroNews = `
   </body>
 </html>
 
-`;
+`
 
 const table = `
 <table>
@@ -42,6 +42,6 @@ const table = `
         <td></td>
     </tr>
 </table>
-`;
+`
 
-export { heroNews, table };
+export { heroNews, table }
