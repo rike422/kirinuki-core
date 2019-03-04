@@ -5,34 +5,32 @@
   "author": "Akira Nitta",
   "ava": {
     "files": [
-      "src/**/*_test.js"
+      "src/**/*_test.ts"
     ],
+    "compileEnhancements": false,
     "require": [
-      "@babel/register",
-      "./test_helper"
+      "ts-node/register"
     ],
-    "verbose": true,
-    "noCache": true
+    "extensions": [
+      "ts"
+    ],
+    "verbose": true
   },
   "bugs": {
     "url": "https://github.com/rike422/kirinuki-core/issues"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "node-sass": "^4.11.0",
     "pluralize": "^7.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.2.3",
-    "@babel/plugin-external-helpers": "7.2.0",
-    "@babel/preset-env": "7.3.4",
-    "@babel/preset-flow": "7.0.0",
-    "@babel/register": "7.0.0",
+    "@types/cheerio": "^0.22.10",
+    "@types/jsdom": "^12.2.3",
+    "@types/node": "^11.10.4",
+    "@types/pluralize": "0.0.29",
+    "@types/power-assert": "^1.5.0",
     "ava": "1.2.1",
-    "babel-preset-power-assert": "3.0.0",
     "codecov": "3.2.0",
-    "flow": "0.2.3",
-    "flow-bin": "0.94.0",
     "jsdom": "13.2.0",
     "nyc": "13.3.0",
     "power-assert": "1.6.1",
@@ -43,12 +41,23 @@
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-json": "3.1.0",
     "rollup-plugin-node-resolve": "4.0.0",
+    "rollup-plugin-typescript": "^1.0.0",
     "rollup-plugin-uglify": "6.0.2",
     "sinon": "7.2.6",
-    "snazzy": "8.0.0"
+    "snazzy": "^8.0.0",
+    "ts-node": "^8.0.2",
+    "ts-node-test-register": "^8.0.0",
+    "tslib": "^1.9.3",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.3333"
   },
   "files": [
-    "lib/**/*.js"
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "README.md",
+    "package.json"
   ],
   "homepage": "https://github.com/rike422/kirinuki-core#readme",
   "keywords": [
@@ -56,19 +65,20 @@
   ],
   "license": "MIT",
   "main": "lib/kirinuki.js",
+  "type": "lib/kirinuki.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rike422/kirinuki-core.git"
   },
   "scripts": {
     "build": "npm run build:node && npm run build:browser",
-    "build:node": "babel src -d lib --ignore *_test.js",
+    "build:node": "tsc -b",
     "build:browser": "rollup -c",
     "clean": "rm -rf lib/*",
     "prebuild": "npm run clean",
     "prepare": "npm run build",
-    "test": "NODE_ENV=AVA ava",
-    "test:ci": "NODE_ENV=AVA BABEL_DISABLE_CACHE=1 nyc ava",
-    "test:watch": "NODE_ENV=AVA ava --watch"
+    "test": "tsc && NODE_ENV=AVA ava",
+    "test:ci": "tsc && NODE_ENV=AVA nyc --extension .ts ava",
+    "test:watch": "NODE_ENV=AVA tsc && ava --watch"
   }
 }
