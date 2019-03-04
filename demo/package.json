@@ -11,7 +11,7 @@
     "gatsby-plugin-react-helmet": "3.0.7",
     "gatsby-plugin-sass": "2.0.10",
     "gh-pages": "1.2.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "4.11.0",
     "pluralize": "7.0.0",
     "react": "16.8.3",
     "react-codemirror2": "5.1.0",
@@ -30,8 +30,8 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.3.4"
   }
