@@ -1,7 +1,7 @@
 import test from 'ava'
-import { heroNews } from '../fixtures/fixture_test'
-import { browser } from '../kirinuki'
-import { setupWindow } from '../test_helper'
+import { heroNews } from '../../fixtures/fixture_test'
+import { browser } from '../../kirinuki'
+import { setupWindow } from '../../test_helper'
 
 setupWindow(heroNews)
 
@@ -24,12 +24,12 @@ test('should unfold query object attributes when which has the _unfold property 
     topics: [
       {
         content: 'Batman come back in Gossam City!',
-        image: 'https://exmaple.com/batman.png'
+        image: 'https://example.com/batman.png'
       },
 
       {
         content: 'Dr. Strange got into a traffic accident.',
-        image: 'https://exmaple.com/strange.png'
+        image: 'https://example.com/strange.png'
       }
     ]
   })
@@ -53,7 +53,7 @@ test('should pick first object when property key is single', t => {
     title: 'Hero News!',
     topic: {
       content: 'Batman come back in Gossam City!',
-      image: 'https://exmaple.com/batman.png'
+      image: 'https://example.com/batman.png'
     }
   })
 })
@@ -80,12 +80,12 @@ test('should unfold query object attributes when which has the _unfold property 
       nestTopics: [
         {
           content: 'Batman come back in Gossam City!',
-          image: 'https://exmaple.com/batman.png'
+          image: 'https://example.com/batman.png'
         },
 
         {
           content: 'Dr. Strange got into a traffic accident.',
-          image: 'https://exmaple.com/strange.png'
+          image: 'https://example.com/strange.png'
         }
       ]
     }

@@ -1,5 +1,5 @@
 // @flow
-import { env as browserEnv } from './env/browser'
+import { env as browserEnv } from './scraper/browser/browser'
 import { traversal } from './traversal'
 import { IResult, ISchema } from './types'
 

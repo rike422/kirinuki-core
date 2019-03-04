@@ -1,4 +1,4 @@
-import { ISchema } from '../types'
+import { ISchema, TransformContext } from '../types'
 import { isPlural } from '../util'
 import { ICreateDom, ICreateScrappers, IScrapper } from './types'
 import { unfold } from '../unfold'
@@ -7,10 +7,11 @@ export function generateConverter(
   createDom: ICreateDom,
   createScrapper: ICreateScrappers
 ) {
-  return function runConvert(
+  return function convert(
     schema: ISchema,
     node: any,
-    travasal: (
+    context: TransformContext,
+    process: (
       converted: object,
       key: string,
       selector: any,
@@ -25,7 +26,7 @@ export function generateConverter(
 
     const rootElement = root === null ? createDom(node) : createDom(node, root)
 
-    const scrapper = createScrapper(rootElement)
+    const scrapper = createScrapper(rootElement, context)
 
     const convertedObject = Object.keys(schema).reduce(
       (
@@ -40,7 +41,7 @@ export function generateConverter(
             ? scrapper.scrapElements
             : scrapper.scrap
 
-        return travasal(converted, key, selector, scrap, rootElement)
+        return process(converted, key, selector, scrap, rootElement)
       },
       {}
     )

@@ -1,15 +1,18 @@
 import test from 'ava'
-import { heroNews } from '../fixtures/fixture_test'
-import { node } from '../kirinuki'
+import { heroNews } from '../../fixtures/fixture_test'
+import { browser } from '../../kirinuki'
+import { setupWindow } from '../../test_helper'
 
-test('should return single value when attribute key is single', t => {
-  const value = node(
+setupWindow(heroNews)
+
+test('should return single value when attribute key is single on browser', t => {
+  const value = browser(
     {
       title: 'title',
       topic: '.news-list .content'
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -18,8 +21,8 @@ test('should return single value when attribute key is single', t => {
   })
 })
 
-test('should return Array when attribute key is plural in node', t => {
-  const value = node(
+test('should return Array when attribute key is plural on browser', t => {
+  const value = browser(
     {
       title: 'title',
       topic: {
@@ -28,7 +31,7 @@ test('should return Array when attribute key is plural in node', t => {
       }
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -40,8 +43,8 @@ test('should return Array when attribute key is plural in node', t => {
   })
 })
 
-test('should return Array when attribute key is plural(imageurl)', t => {
-  const value = node(
+test('should return Array when attribute key is plural on browser(image)', t => {
+  const value = browser(
     {
       title: 'title',
       topic: {
@@ -50,7 +53,7 @@ test('should return Array when attribute key is plural(imageurl)', t => {
       }
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -62,15 +65,15 @@ test('should return Array when attribute key is plural(imageurl)', t => {
       ],
 
       images: [
-        'https://exmaple.com/batman.png',
-        'https://exmaple.com/strange.png'
+        'https://example.com/batman.png',
+        'https://example.com/strange.png'
       ]
     }
   })
 })
 
-test('should return value in appropriate type, dependent on attributes key form', t => {
-  const value = node(
+test('should return value in appropriate type, dependent on attributes key form on browser', t => {
+  const value = browser(
     {
       title: 'title',
       topic: {
@@ -82,7 +85,7 @@ test('should return value in appropriate type, dependent on attributes key form'
       images: '.news-list img'
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -92,10 +95,10 @@ test('should return value in appropriate type, dependent on attributes key form'
       summaries: ['Amalgam']
     },
 
-    image: 'https://exmaple.com/batman.png',
+    image: 'https://example.com/batman.png',
     images: [
-      'https://exmaple.com/batman.png',
-      'https://exmaple.com/strange.png'
+      'https://example.com/batman.png',
+      'https://example.com/strange.png'
     ]
   })
 })

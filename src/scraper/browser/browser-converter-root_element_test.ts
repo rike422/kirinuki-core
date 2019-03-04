@@ -1,15 +1,18 @@
 import test from 'ava'
-import { heroNews } from '../fixtures/fixture_test'
-import { node } from '../kirinuki'
+import { heroNews } from '../../fixtures/fixture_test'
+import { browser } from '../../kirinuki'
+import { setupWindow } from '../../test_helper'
 
-test('should return single value when attribute key is single', t => {
-  const value = node(
+setupWindow(heroNews)
+
+test('should return single value when attribute key is single on browser', t => {
+  const value = browser(
     {
       title: 'title',
       topic: '.news-list .content'
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -18,8 +21,8 @@ test('should return single value when attribute key is single', t => {
   })
 })
 
-test('should return Array when attribute key is plural with root element', t => {
-  const value = node(
+test('should return Array when attribute key is plural on browser(image)', t => {
+  const value = browser(
     {
       title: 'title',
       topic: {
@@ -35,7 +38,7 @@ test('should return Array when attribute key is plural with root element', t => 
       }
     },
 
-    heroNews
+    document
   )
 
   t.deepEqual(value, {
@@ -47,8 +50,8 @@ test('should return Array when attribute key is plural with root element', t => 
       ],
 
       images: [
-        'https://exmaple.com/batman.png',
-        'https://exmaple.com/strange.png'
+        'https://example.com/batman.png',
+        'https://example.com/strange.png'
       ]
     },
 
@@ -58,7 +61,7 @@ test('should return Array when attribute key is plural with root element', t => 
         'MVP of the month.'
       ],
 
-      images: ['https://exmaple.com/stark.png', 'https://exmaple.com/mvp.png']
+      images: ['https://example.com/stark.png', 'https://example.com/mvp.png']
     }
   })
 })
