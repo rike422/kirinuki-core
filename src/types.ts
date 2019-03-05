@@ -3,17 +3,17 @@ export interface IResult {
     | string
     | Array<string | undefined | IResult>
     | undefined
-    | IResult
+    | IResult;
 }
 
 export interface ISchema {
-  _root?: string
-  _unfold?: boolean
-  _origin?: string
+  _root?: string;
+  _unfold?: boolean;
+  _origin?: string;
 
-  [key: string]: string | [string, string?] | boolean | undefined | ISchema
+  [key: string]: string | [string, string?] | boolean | undefined | ISchema;
 }
 
 export type TransformContext = {
-  origin?: string
-}
+  origin?: string;
+};

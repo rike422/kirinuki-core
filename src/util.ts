@@ -1,12 +1,12 @@
 // @flow
-import pluralize from 'pluralize'
+import pluralize from "pluralize";
 
 export function isString(str: any): str is string {
-  return typeof str === 'string' || str instanceof String
+  return typeof str === "string" || str instanceof String;
 }
 
 export function isPlural(str: string): boolean {
-  return pluralize(str) === str
+  return pluralize(str) === str;
 }
 
 export function isAbsoluteUrl(url: string): boolean {

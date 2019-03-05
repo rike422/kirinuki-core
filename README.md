@@ -60,6 +60,36 @@ kirinuki(schema, html)
 // } }
 ```
 
+#### Text Node
+
+If you want to scrape text node in A tag, you can do it in follow code
+
+```javascript
+
+const html = `
+
+<div class="sub">
+  <ul class="sub-news-list">
+    <li>
+      <a href="https://example.com/stark.png">close in on the "truth" of Stark industries.</a>
+    </li>
+    <li>
+      <a href="https://example.com/mvp.png">MVP of the month.</a>
+    </li>
+  </ul>
+</div>
+`
+const schema = 
+  { 
+    topics: { 
+      _unfold: true,
+      title: [".sub-news-list a", "text"],
+      link: ".sub-news-list a"
+   } 
+}
+
+kirinuki(schema, html)
+```
 
 #### Auto complete 
 
@@ -74,7 +104,7 @@ const html = `
   <ul class="news-list">
     <li>
       <a href="/batman/news/1">
-			  <span class="content">Batman come back in Gossam City!</span>
+        <span class="content">Batman come back in Gossam City!</span>
       </a>
       <img class="thumbnail" src="/assets/batman.png"/>
     </li>

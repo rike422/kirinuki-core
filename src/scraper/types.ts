@@ -1,4 +1,4 @@
-import { IResult, ISchema, TransformContext } from '../types'
+import { IResult, ISchema, TransformContext } from "../types";
 
 export interface ICreateDom {
   (node: any, root?: string):
@@ -6,27 +6,27 @@ export interface ICreateDom {
     | undefined
     | HTMLElement
     | Document
-    | Element
+    | Element;
 }
 
 export interface IScrappers {
-  scrap(selector: string, attr?: string): string | undefined
+  scrap(selector: string, attr?: string): string | undefined;
 
   scrapElements(
     selector: string,
     attr: string | undefined
-  ): string | Array<string | undefined>
+  ): string | Array<string | undefined>;
 }
 
 export interface ICreateScrappers {
-  (rootElement: any, context: TransformContext): IScrappers
+  (rootElement: any, context: TransformContext): IScrappers;
 }
 
 export interface IScrapper {
   (selector: string, attr?: string | undefined):
     | string
     | Array<string | undefined>
-    | undefined
+    | undefined;
 }
 
 export interface IExecutionEnv {
@@ -41,5 +41,5 @@ export interface IExecutionEnv {
       scrap: IScrapper,
       rootElement: any
     ) => object
-  ): IResult
+  ): IResult;
 }

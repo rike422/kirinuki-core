@@ -4,19 +4,19 @@ export function createDom(
   node: string | HTMLElement,
   root?: string
 ): HTMLElement | Document | Element {
-  const target: HTMLElement | Document = isString(node) ? parseDom(node) : node
+  const target: HTMLElement | Document = isString(node) ? parseDom(node) : node;
   if (root == undefined) {
-    return target
+    return target;
   }
-  
-  const selectRoot = target.querySelector(root)
+
+  const selectRoot = target.querySelector(root);
   if (selectRoot === null) {
-    throw `Can't match root selector ${root}`
+    throw `Can't match root selector ${root}`;
   }
-  return selectRoot
+  return selectRoot;
 }
 
 function parseDom(html: string): Document {
-  const parser = new DOMParser()
-  return parser.parseFromString(html, 'text/html')
+  const parser = new DOMParser();
+  return parser.parseFromString(html, "text/html");
 }
