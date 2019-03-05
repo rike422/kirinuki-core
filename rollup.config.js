@@ -21,7 +21,8 @@ export default {
     resolve({
       jsnext: true,
       browser: true,
-      main: true
+      main: true,
+      preferBuiltins: true
     }),
     json({}),
     commonjs({

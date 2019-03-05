@@ -15,9 +15,12 @@ Parse string and build DOM by [cheerio](https://github.com/cheeriojs/cheerio) an
 
 - browser(schema: Object, node: string)
 
+
+- browser(schema: Object, node: string, context: object)
+
 ```javascript
 
-import { node as kirinuki } from 'kirinuki';
+import { node as kirinuki } from 'kirinuki-core';
 const html = `
 <html>
   <head>
@@ -57,6 +60,74 @@ kirinuki(schema, html)
 // } }
 ```
 
+
+#### Auto complete 
+
+If url is a relative path and you want to change from that to absolute path, pass context object. 
+Relative paths are convert by `origin` property
+
+
+```javascript
+const html = `
+<div class="main">
+  <h3 class="topic">Amalgam</h3>
+  <ul class="news-list">
+    <li>
+      <a href="/batman/news/1">
+			  <span class="content">Batman come back in Gossam City!</span>
+      </a>
+      <img class="thumbnail" src="/assets/batman.png"/>
+    </li>
+    <li>
+      <a href="/dr_strage/news/1">
+        <span class="content">Dr. Strange got into a traffic accident.</span>
+      </a>
+      <img class="thumbnail" src="/assets/strange.png"/>
+    </li>
+  </ul>
+</div>
+`
+
+const context = {
+  origin: 'https://example.com'
+}
+
+const schema = {
+   unfoldTopics: {
+        _unfold: true,
+        content: ".news-list .content",
+        image: ".news-list img",
+         link: ".news-list a"
+    },
+    topics: {
+        contents: ".news-list .content",
+        images: ".news-list img",
+        links: ".news-list a"
+    }
+}
+
+kirinuki(schema, html, context)
+
+// { unfoldTopics:
+//    [ { content: 'Batman come back in Gossam City!',
+//        image: 'https://example.com/assets/batman.png',
+//        link: 'https://example.com/batman/news/1' },
+//      { content: 'Dr. Strange got into a traffic accident.',
+//        image: 'https://example.com/assets/strange.png',
+//        link: 'https://example.com/dr_strage/news/1' } ],
+//   topics:
+//    { contents:
+//       [ 'Batman come back in Gossam City!',
+//         'Dr. Strange got into a traffic accident.' ],
+//      images:
+//       [ 'https://example.com/assets/batman.png',
+//         'https://example.com/assets/strange.png' ],
+//      links:
+//       [ 'https://example.com/batman/news/1',
+//         'https://example.com/dr_strage/news/1' ] } }```
+
+```
+
 ### browser
 
 scrape to Doucment or HTMLElement by [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
@@ -67,7 +138,7 @@ scrape to Doucment or HTMLElement by [DOM API](https://developer.mozilla.org/en-
 - browser(schema: Object) // auto assign to window.document to node variable
 
 ```javascript
-import { browser as kirinuki } from 'kirinuki';
+import { browser as kirinuki } from 'kirinuki-core';
 
 
 const schema = {
