@@ -1,8 +1,12 @@
 import { JSDOM } from 'jsdom'
+
 const globalAny: any = global
 
 export function setupWindow(html: string) {
-  globalAny.window = new JSDOM(html).window
+  const windowInfo = {
+    url: 'https://example.com/'
+  }
+  globalAny.window = new JSDOM(html, windowInfo).window
   globalAny.document = window.document
   globalAny.HTMLElement = globalAny.window.HTMLElement
   globalAny.HTMLImageElement = globalAny.window.HTMLImageElement

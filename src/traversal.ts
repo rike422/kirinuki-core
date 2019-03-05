@@ -1,21 +1,18 @@
 import { isPlural, isString } from './util'
-import { IResult, ISchema } from './types'
-import { IExecutionEnvDriver, IScrapper } from './env/types'
+import { IResult, ISchema, TransformContext } from './types'
+import { IExecutionEnv, IScrapper } from './scraper/types'
 
 export function traversal(
-  context: IExecutionEnvDriver
+  env: IExecutionEnv,
+  context: TransformContext = {}
 ): (schema: ISchema, html: any) => IResult {
-  const bindConvert = convert.bind(context)
-
-  function convert(
-    this: IExecutionEnvDriver,
-    baseSchema: ISchema,
-    node: any
-  ): IResult {
+  const convert = function(baseSchema: ISchema, node: any): IResult {
     const schema: ISchema = { ...baseSchema }
-    return this.runConvert(
+
+    return env.convert(
       schema,
       node,
+      context,
       (
         converted: IResult,
         key: string,
@@ -26,9 +23,9 @@ export function traversal(
         if (isString(selector)) {
           converted[key] = scrap(selector)
         } else if (Array.isArray(selector)) {
-          converted[key] = scrap.apply(this, selector)
+          converted[key] = scrap.apply(null, selector)
         } else if (selector !== null && typeof selector === 'object') {
-          const data = bindConvert(selector, rootElement)
+          const data = convert(selector, rootElement)
           converted[key] =
             Array.isArray(data) && !isPlural(key) ? data[0] : data
         }
@@ -38,6 +35,6 @@ export function traversal(
   }
 
   return (schema: ISchema, html: any) => {
-    return bindConvert(schema, html)
+    return convert(schema, html)
   }
 }

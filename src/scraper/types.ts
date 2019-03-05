@@ -1,4 +1,4 @@
-import { IResult, ISchema } from '../types'
+import { IResult, ISchema, TransformContext } from '../types'
 
 export interface ICreateDom {
   (node: any, root?: string):
@@ -19,7 +19,7 @@ export interface IScrappers {
 }
 
 export interface ICreateScrappers {
-  (rootElement: any): IScrappers
+  (rootElement: any, context: TransformContext): IScrappers
 }
 
 export interface IScrapper {
@@ -29,10 +29,11 @@ export interface IScrapper {
     | undefined
 }
 
-export interface IExecutionEnvDriver {
-  runConvert(
+export interface IExecutionEnv {
+  convert(
     schema: ISchema,
     node: any,
+    context: TransformContext,
     travasal: (
       converted: { [key: string]: any },
       key: string,

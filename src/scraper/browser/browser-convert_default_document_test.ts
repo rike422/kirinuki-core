@@ -1,7 +1,7 @@
 import test from 'ava'
-import { heroNews } from '../fixtures/fixture_test'
-import { browser } from '../kirinuki'
-import { setupWindow } from '../test_helper'
+import { heroNews } from '../../fixtures/fixture_test'
+import { browser } from '../../kirinuki'
+import { setupWindow } from '../../test_helper'
 
 setupWindow(heroNews)
 
@@ -53,8 +53,8 @@ test('should return Array when attribute key is plural', t => {
       ],
 
       images: [
-        'https://exmaple.com/batman.png',
-        'https://exmaple.com/strange.png'
+        'https://example.com/batman.png',
+        'https://example.com/strange.png'
       ]
     }
   })
@@ -79,10 +79,10 @@ test('should return value in appropriate type, dependent on attributes key form'
       summaries: ['Amalgam']
     },
 
-    image: 'https://exmaple.com/batman.png',
+    image: 'https://example.com/batman.png',
     images: [
-      'https://exmaple.com/batman.png',
-      'https://exmaple.com/strange.png'
+      'https://example.com/batman.png',
+      'https://example.com/strange.png'
     ]
   })
 })
