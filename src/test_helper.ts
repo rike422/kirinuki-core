@@ -1,10 +1,10 @@
-import { JSDOM } from "jsdom";
+import { JSDOM } from 'jsdom';
 
 const globalAny: any = global;
 
 export function setupWindow(html: string) {
   const windowInfo = {
-    url: "https://example.com/"
+    url: 'https://example.com/',
   };
   globalAny.window = new JSDOM(html, windowInfo).window;
   globalAny.document = window.document;

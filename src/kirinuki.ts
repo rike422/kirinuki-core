@@ -1,7 +1,7 @@
-import { env as browserEnv } from "./scraper/browser/browser";
-import { env as nodeEnv } from "./scraper/node/node";
-import { traversal } from "./traversal";
-import { IResult, ISchema, TransformContext } from "./types";
+import { env as browserEnv } from './scraper/browser/browser';
+import { env as nodeEnv } from './scraper/node/node';
+import { traversal } from './traversal';
+import { IResult, ISchema, TransformContext } from './types';
 
 export function node(
   schema: ISchema,
@@ -40,7 +40,7 @@ export function browser(
     target = node;
   }
   const defaultContext = {
-    origin: document.location.origin
+    origin: document.location.origin,
   };
   applyContext = Object.assign({}, defaultContext, context || {});
   const browserParser = traversal(browserEnv, applyContext);
@@ -48,5 +48,5 @@ export function browser(
 }
 
 function isTransformContext(v: any): v is TransformContext {
-  return v.hasOwnProperty("origin");
+  return v.hasOwnProperty('origin');
 }

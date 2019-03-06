@@ -1,4 +1,4 @@
-import { IResult, ISchema, TransformContext } from "../types";
+import { IResult, ISchema, TransformContext } from '../types';
 
 export interface ICreateDom {
   (node: any, root?: string):

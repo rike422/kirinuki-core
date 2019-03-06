@@ -1,15 +1,15 @@
-import test from "ava";
-import { linkTextNews } from "../../fixtures/fixture_test";
-import { node } from "../../kirinuki";
+import test from 'ava';
+import { linkTextNews } from '../../fixtures/fixture_test';
+import { node } from '../../kirinuki';
 
 test('when second element is "text" return text node, convenient for A tag', t => {
   const value = node(
     {
       topics: {
         _unfold: true,
-        title: [".sub-news-list a", "text"],
-        link: ".sub-news-list a"
-      }
+        title: ['.sub-news-list a', 'text'],
+        link: '.sub-news-list a',
+      },
     },
     linkTextNews
   );
@@ -18,12 +18,12 @@ test('when second element is "text" return text node, convenient for A tag', t =
     topics: [
       {
         title: 'close in on the "truth" of Stark industries.',
-        link: "https://example.com/stark.png"
+        link: 'https://example.com/stark.png',
       },
       {
-        title: "MVP of the month.",
-        link: "https://example.com/mvp.png"
-      }
-    ]
+        title: 'MVP of the month.',
+        link: 'https://example.com/mvp.png',
+      },
+    ],
   });
 });

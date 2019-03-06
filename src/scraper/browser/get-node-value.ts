@@ -1,5 +1,5 @@
-import { TransformContext } from "../../types";
-import { resolveURL } from "../util";
+import { TransformContext } from '../../types';
+import { resolveURL } from '../util';
 
 export function getNodeValue(
   node: Element,

@@ -1,7 +1,7 @@
-import { ISchema, TransformContext } from "../types";
-import { isPlural } from "../util";
-import { ICreateDom, ICreateScrappers, IScrapper } from "./types";
-import { unfold } from "../unfold";
+import { ISchema, TransformContext } from '../types';
+import { isPlural } from '../util';
+import { ICreateDom, ICreateScrappers, IScrapper } from './types';
+import { unfold } from '../unfold';
 
 export function generateConverter(
   createDom: ICreateDom,

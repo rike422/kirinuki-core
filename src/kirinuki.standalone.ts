@@ -1,7 +1,7 @@
 // @flow
-import { env as browserEnv } from "./scraper/browser/browser";
-import { traversal } from "./traversal";
-import { IResult, ISchema } from "./types";
+import { env as browserEnv } from './scraper/browser/browser';
+import { traversal } from './traversal';
+import { IResult, ISchema } from './types';
 
 export function browser(schema: ISchema): IResult;
 export function browser(schema: ISchema, node: Document): IResult;

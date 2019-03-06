@@ -1,11 +1,11 @@
-import { IExecutionEnv, IScrappers } from "../types";
-import { generateConverter } from "../converter";
-import { TransformContext } from "../../types";
-import { getNodeValue } from "./get-node-value";
-import { createDom } from "./create-dom";
+import { IExecutionEnv, IScrappers } from '../types';
+import { generateConverter } from '../converter';
+import { TransformContext } from '../../types';
+import { getNodeValue } from './get-node-value';
+import { createDom } from './create-dom';
 
 export const env: IExecutionEnv = {
-  convert: generateConverter(createDom, createScrapper)
+  convert: generateConverter(createDom, createScrapper),
 };
 
 function createScrapper(
@@ -14,12 +14,12 @@ function createScrapper(
 ): IScrappers {
   const scrap = function(selector: string, attr?: string): string | undefined {
     const node: any = rootElement(selector).get(0);
-    if(node == undefined) {
-      throw new Error(`Nothing matched ${selector}`)
+    if (node == undefined) {
+      throw new Error(`Nothing matched ${selector}`);
     }
     if (attr == undefined) {
       return getNodeValue(node, context);
-    } else if (attr === "text") {
+    } else if (attr === 'text') {
       return getChildText(node);
     } else {
       return node.attribs[attr];
@@ -30,16 +30,22 @@ function createScrapper(
     selector: string,
     attr?: string
   ): string | Array<string | undefined> {
-    const elements = rootElement(selector).toArray()
+    const elements = rootElement(selector).toArray();
     let apply;
-    if(attr == undefined) {
-      apply = (node: any): string => { return getNodeValue(node, context); }
-    } else if(attr === 'text') {
-      apply = (node: any): string => { return getChildText(node) }
+    if (attr == undefined) {
+      apply = (node: any): string => {
+        return getNodeValue(node, context);
+      };
+    } else if (attr === 'text') {
+      apply = (node: any): string => {
+        return getChildText(node);
+      };
     } else {
-      apply = (node: any): string => { return node.attribs[attr] }
+      apply = (node: any): string => {
+        return node.attribs[attr];
+      };
     }
-    return elements.map(apply)
+    return elements.map(apply);
   };
 
   return { scrap, scrapElements };

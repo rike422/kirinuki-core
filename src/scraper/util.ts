@@ -1,6 +1,6 @@
-import { TransformContext } from "../types";
-import { resolve as urlResolve } from "url";
-import { isAbsoluteUrl, isString } from "../util";
+import { TransformContext } from '../types';
+import { resolve as urlResolve } from 'url';
+import { isAbsoluteUrl, isString } from '../util';
 
 export function resolveURL(path: string, context: TransformContext): string {
   if (isString(context.origin) && !isAbsoluteUrl(path)) {

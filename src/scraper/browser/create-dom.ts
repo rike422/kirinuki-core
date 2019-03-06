@@ -1,4 +1,4 @@
-import { isString } from "../../util";
+import { isString } from '../../util';
 
 export function createDom(
   node: string | HTMLElement,
@@ -18,5 +18,5 @@ export function createDom(
 
 function parseDom(html: string): Document {
   const parser = new DOMParser();
-  return parser.parseFromString(html, "text/html");
+  return parser.parseFromString(html, 'text/html');
 }

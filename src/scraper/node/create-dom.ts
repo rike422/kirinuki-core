@@ -1,5 +1,5 @@
-import { isString } from "../../util";
-import $ from "cheerio";
+import { isString } from '../../util';
+import $ from 'cheerio';
 
 export function createDom(node: any, root?: string): CheerioStatic | undefined {
   const cheerioNode: CheerioStatic = isString(node) ? $.load(node) : node;

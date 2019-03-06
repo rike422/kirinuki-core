@@ -1,4 +1,4 @@
-import { IResult } from "./types";
+import { IResult } from './types';
 
 export function unfold(obj: IResult): Array<IResult> {
   const keys = Object.keys(obj);
