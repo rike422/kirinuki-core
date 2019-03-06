@@ -24,7 +24,7 @@
     "pluralize": "^7.0.0"
   },
   "devDependencies": {
-    "@types/cheerio": "0.22.10",
+    "@types/cheerio": "0.22.11",
     "@types/jsdom": "12.2.3",
     "@types/node": "11.10.4",
     "@types/pluralize": "0.0.29",
