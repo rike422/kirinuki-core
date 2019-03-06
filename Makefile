@@ -15,3 +15,13 @@ build:
 doc-deploy:
 	make build-and-copy
 	cd demo; npm run deploy
+
+release-major:
+	npx release-it major
+	
+release-patch:
+	npx release-it patch
+
+release-minor:
+	npx release-it minor
+
