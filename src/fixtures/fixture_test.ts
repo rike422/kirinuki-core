@@ -31,7 +31,7 @@ const heroNews = `
     </div>
   </body>
 </html>
-`
+`;
 
 const relativeHeroNews = `
 <html>
@@ -66,8 +66,19 @@ const relativeHeroNews = `
     </div>
   </body>
 </html>
-`
-
+`;
+const linkTextNews = `
+    <div class="sub">
+        <ul class="sub-news-list">
+            <li>
+              <a href="https://example.com/stark.png">close in on the "truth" of Stark industries.</a>
+            </li>
+            <li>
+               <a href="https://example.com/mvp.png">MVP of the month.</a>
+            </li>
+        </ul>
+    </div>
+`;
 const table = `
 <table>
     <tr>
@@ -76,6 +87,6 @@ const table = `
         <td></td>
     </tr>
 </table>
-`
+`;
 
-export { heroNews, table, relativeHeroNews }
+export { heroNews, table, relativeHeroNews, linkTextNews };

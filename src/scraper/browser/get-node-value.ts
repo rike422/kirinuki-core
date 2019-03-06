@@ -6,12 +6,12 @@ export function getNodeValue(
   context: TransformContext
 ): string | undefined {
   if (node instanceof HTMLImageElement) {
-    return resolveURL(node.src, context)
+    return resolveURL(node.src, context);
   } else if (
     node instanceof HTMLAnchorElement ||
     node instanceof HTMLLinkElement
   ) {
-    return resolveURL(node.href, context)
+    return resolveURL(node.href, context);
   }
-  return node.textContent || undefined
+  return node.textContent || undefined;
 }
