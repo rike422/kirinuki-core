@@ -6,6 +6,9 @@ Kirinuki is a library that convert any html to JSON using CSS selectors.
 
 https://rike422.github.io/kirinuki-core
 
+## [Command line tool](https://github.com/rike422/kirinuki-cli)
+
+[https://github.com/rike422/kirinuki-cli](https://github.com/rike422/kirinuki-cli)
 
 ## Usage
 
