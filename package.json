@@ -30,7 +30,7 @@
     "@types/pluralize": "0.0.29",
     "@types/power-assert": "1.5.0",
     "ava": "1.4.1",
-    "codecov": "3.3.0",
+    "codecov": "3.4.0",
     "jsdom": "15.0.0",
     "nyc": "14.1.0",
     "power-assert": "1.6.1",
