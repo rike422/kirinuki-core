@@ -17,7 +17,7 @@
     "react-codemirror2": "6.0.0",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
-    "react-json-viewer": "1.7.1",
+    "react-json-viewer": "2.1.0",
     "react-micro-container": "1.2.0",
     "recompose": "0.30.0",
     "semantic-ui-css": "2.4.1",
