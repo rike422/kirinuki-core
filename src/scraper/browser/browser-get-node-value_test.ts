@@ -1,5 +1,5 @@
 import test from 'ava';
-import { heroNews } from '../../fixtures/fixture_test';
+import { heroNews } from '../../fixtures/test_fixture';
 import { getNodeValue } from './get-node-value';
 import { setupWindow } from '../../test_helper';
 

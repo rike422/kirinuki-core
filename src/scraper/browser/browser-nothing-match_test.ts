@@ -1,5 +1,5 @@
 import test from 'ava';
-import { linkTextNews } from '../../fixtures/fixture_test';
+import { linkTextNews } from '../../fixtures/test_fixture';
 import { browser } from '../../kirinuki';
 import { setupWindow } from '../../test_helper';
 

@@ -1,5 +1,5 @@
 import test from 'ava';
-import { relativeHeroNews } from '../../fixtures/fixture_test';
+import { relativeHeroNews } from '../../fixtures/test_fixture';
 import { browser } from '../../kirinuki';
 import { setupWindow } from '../../test_helper';
 

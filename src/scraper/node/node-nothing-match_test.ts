@@ -1,5 +1,5 @@
 import test from 'ava';
-import { linkTextNews } from '../../fixtures/fixture_test';
+import { linkTextNews } from '../../fixtures/test_fixture';
 import { node } from '../../kirinuki';
 
 test("Shuld notice error message when element didn't exist", t => {

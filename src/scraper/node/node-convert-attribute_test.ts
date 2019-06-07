@@ -1,5 +1,5 @@
 import test from 'ava';
-import { heroNews } from '../../fixtures/fixture_test';
+import { heroNews } from '../../fixtures/test_fixture';
 import { node } from '../../kirinuki';
 
 test('should return single html attribute when selector is Array and selector key is single', t => {

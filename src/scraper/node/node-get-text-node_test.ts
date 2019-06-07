@@ -1,5 +1,5 @@
 import test from 'ava';
-import { linkTextNews } from '../../fixtures/fixture_test';
+import { linkTextNews } from '../../fixtures/test_fixture';
 import { node } from '../../kirinuki';
 
 test('when second element is "text" return text node, convenient for A tag', t => {

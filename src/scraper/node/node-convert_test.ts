@@ -1,5 +1,5 @@
 import test from 'ava';
-import { heroNews } from '../../fixtures/fixture_test';
+import { heroNews } from '../../fixtures/test_fixture';
 import { node } from '../../kirinuki';
 
 test('should return single value when attribute key is single', t => {
