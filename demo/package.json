@@ -6,10 +6,10 @@
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
     "codemirror": "5.48.0",
-    "gatsby": "2.13.15",
+    "gatsby": "2.13.16",
     "gatsby-link": "2.2.1",
     "gatsby-plugin-react-helmet": "3.1.1",
-    "gatsby-plugin-sass": "2.1.1",
+    "gatsby-plugin-sass": "2.1.2",
     "gh-pages": "1.2.0",
     "node-sass": "4.12.0",
     "pluralize": "8.0.0",
