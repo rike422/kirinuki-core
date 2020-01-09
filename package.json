@@ -28,7 +28,7 @@
     "@types/jsdom": "12.2.4",
     "@types/node": "11.15.4",
     "@types/pluralize": "0.0.29",
-    "@types/power-assert": "1.5.2",
+    "@types/power-assert": "1.5.3",
     "ava": "2.4.0",
     "codecov": "3.6.1",
     "jsdom": "15.2.1",
