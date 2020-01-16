@@ -11,7 +11,7 @@
     "gatsby-plugin-react-helmet": "3.1.21",
     "gatsby-plugin-sass": "2.1.27",
     "gh-pages": "1.2.0",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "pluralize": "8.0.0",
     "react": "16.12.0",
     "react-codemirror2": "6.0.0",
