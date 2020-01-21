@@ -6,7 +6,7 @@
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
     "codemirror": "5.51.0",
-    "gatsby": "2.18.25",
+    "gatsby": "2.19.0",
     "gatsby-link": "2.2.28",
     "gatsby-plugin-react-helmet": "3.1.21",
     "gatsby-plugin-sass": "2.1.27",
