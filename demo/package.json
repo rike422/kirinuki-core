@@ -5,7 +5,7 @@
   "author": "Akira Takahash",
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
-    "codemirror": "5.52.0",
+    "codemirror": "5.52.2",
     "gatsby": "2.19.49",
     "gatsby-link": "2.2.31",
     "gatsby-plugin-react-helmet": "3.1.24",
