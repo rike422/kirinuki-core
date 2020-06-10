@@ -50,7 +50,7 @@
     "tslib": "2.0.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.2.0",
+    "tslint-plugin-prettier": "2.3.0",
     "typescript": "3.9.3"
   },
   "files": [
