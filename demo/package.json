@@ -30,8 +30,8 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
-    "@babel/preset-env": "7.14.1",
+    "@babel/core": "7.14.2",
+    "@babel/preset-env": "7.14.2",
     "@babel/preset-react": "7.13.13",
     "@babel/runtime": "7.14.0"
   }
