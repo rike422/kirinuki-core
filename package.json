@@ -31,7 +31,7 @@
     "@types/power-assert": "1.5.4",
     "ava": "2.4.0",
     "codecov": "3.7.0",
-    "jsdom": "15.2.1",
+    "jsdom": "17.0.0",
     "nyc": "14.1.1",
     "power-assert": "1.6.1",
     "prettier": "1.19.1",
