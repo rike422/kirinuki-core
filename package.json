@@ -29,7 +29,7 @@
     "@types/node": "11.15.54",
     "@types/pluralize": "0.0.29",
     "@types/power-assert": "1.5.8",
-    "ava": "2.4.0",
+    "ava": "4.3.3",
     "codecov": "3.8.2",
     "jsdom": "15.2.1",
     "nyc": "14.1.1",
