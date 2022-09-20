@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "Akira Takahash",
   "dependencies": {
-    "cheerio": "1.0.0-rc.11",
+    "cheerio": "1.0.0-rc.12",
     "codemirror": "5.65.5",
     "gatsby": "4.22.0",
     "gatsby-link": "2.11.0",
