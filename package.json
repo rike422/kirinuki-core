@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/cheerio": "0.22.31",
     "@types/jsdom": "12.2.4",
-    "@types/node": "16.18.34",
+    "@types/node": "18.18.6",
     "@types/pluralize": "0.0.29",
     "@types/power-assert": "1.5.8",
     "ava": "2.4.0",
